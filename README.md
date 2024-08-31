@@ -41,3 +41,7 @@ docker run -it \
   --name elixir \
   elixirprotocol/validator:v3
 ```
+*wait one hour and should see yours here*
+[Elixir Testnet Dashboard](https://testnet-3.elixir.xyz/)
+
+![image](https://github.com/user-attachments/assets/01639a2a-8add-40d8-aca0-d32bf9d655cb)
