@@ -17,7 +17,7 @@ wget https://files.elixir.finance/validator.env -O ~/elixir/validator.env
 ```bash
 nano validator.env
 ```
-**Edit validator.env File:**
+**Edit validator.env File:** 
 
 STRATEGY_EXECUTOR_IP_ADDRESS=YOUR_PUBLIC_IP
 
@@ -45,3 +45,18 @@ docker run -it \
 [Elixir Testnet Dashboard](https://testnet-3.elixir.xyz/)
 
 ![image](https://github.com/user-attachments/assets/01639a2a-8add-40d8-aca0-d32bf9d655cb)
+
+**update**
+```bash 
+cd elixir && wget https://files.elixir.finance/validator.env -O ~/elixir/validator.env
+```
+```bash
+nano validator.env
+```
+**and edit env again**
+```bash
+docker run -it \
+  --env-file ~/elixir/validator.env \
+  --name elixir \
+  elixirprotocol/validator:v3
+```
