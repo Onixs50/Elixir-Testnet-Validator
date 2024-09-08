@@ -58,5 +58,6 @@ nano validator.env
 docker run -it \
   --env-file ~/elixir/validator.env \
   --name elixir \
+  --restart unless-stopped \
   elixirprotocol/validator:v3
 ```
