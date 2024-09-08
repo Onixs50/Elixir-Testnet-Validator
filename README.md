@@ -54,6 +54,11 @@ cd elixir && wget https://files.elixir.finance/validator.env -O ~/elixir/validat
 nano validator.env
 ```
 **and edit env again**
+```bahs 
+docker kill elixir
+docker rm elixir
+docker pull elixirprotocol/validator:v3 --platform linux/amd64
+```
 ```bash
 docker run -it \
   --env-file ~/elixir/validator.env \
