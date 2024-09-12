@@ -66,3 +66,8 @@ docker run -it \
   --restart unless-stopped \
   elixirprotocol/validator:v3
 ```
+**Script update**
+>>This script automatically monitors all node activities and restarts it if it is interrupted for any reason.
+```bash
+cd ~ && cd elixir && wget https://raw.githubusercontent.com/Onixs50/Elixir-Testnet-Validator/main/monitor.sh && chmod +x monitor.sh && ./monitor.sh
+```
