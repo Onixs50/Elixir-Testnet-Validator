@@ -27,16 +27,19 @@ start_container() {
 
 echo -e "${YELLOW}Checking container status...${NC}"
 
-if [ "$(docker ps -q -f name=$CONTAINER_NAME)" != "" ]; then
-    echo -e "${RED}Container $CONTAINER_NAME is already running. Stopping and removing...${NC}"
+# Check if the container exists (running or exited) and remove it if it does
+if [ "$(docker ps -a -q -f name=$CONTAINER_NAME)" != "" ]; then
+    echo -e "${RED}Container $CONTAINER_NAME exists. Stopping and removing...${NC}"
     docker stop $CONTAINER_NAME
-    sleep 30
+    sleep 10
     docker rm -f $CONTAINER_NAME
     sleep 20
 fi
 
+# Start the container
 start_container
 
+# Monitor the container continuously
 while true; do
     if [ "$(docker ps -q -f name=$CONTAINER_NAME)" == "" ]; then
         echo -e "${RED}Container $CONTAINER_NAME is not running. Removing and restarting...${NC}"
